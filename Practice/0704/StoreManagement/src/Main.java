@@ -3,7 +3,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Store store1 = new Store("No.1");
+		Store store1 = new Store("JJoa");
 //		Store store2 = new Store("No.2");
 		Customer customer1 = new Customer("김고객", 1, "111");
 		Customer customer2 = new Customer("이고객", 2, "222");
@@ -37,18 +37,20 @@ public class Main {
 		}
 
 		for (Customer c : store1.getCustomers()) {
+			// 물건을 산 사람만 나오게 하기
 			if (c.purchase.size() > 0) {
-				System.out.println(".......[장바구니]");
-				System.out.println("고객 이름 : " + c.name + "이 구매한 제품");
+				System.out.println("\n.......[" + c.name + "님의 장바구니]");
 				for (Product p : c.getPurchase()) {
 					System.out.println("제품 이름 : " + p.name + " || 가격 : " + p.price + "원");
 				}
+				// 물건을 산 사람의 총 금액
 				System.out.println(">>> 총 " + c.buyPrice + "원");
 			}
 		}
 		
-		System.out.println(".............." + Product.totalPrice);
-
+		// 매장의 총 매출
+		System.out.println("\n  [우리 매장 " + store1.getName() + " 총 매출]");
+		System.out.println(">>> " + Product.totalPrice + "원");		
 	}
 
 }
