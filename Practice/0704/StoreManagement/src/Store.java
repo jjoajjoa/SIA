@@ -5,8 +5,8 @@ public class Store {
 	static int totalPayment;
 	
 	String name;
-	ArrayList<Customer> customers = new ArrayList<Customer>();
-	ArrayList<Product> products = new ArrayList<Product>();
+	ArrayList<Customer> customers = new ArrayList<Customer>(); //고객명당
+	ArrayList<Product> products = new ArrayList<Product>(); //제품리스트
 //	ArrayList<> payList = new ArrayList<>();
 
 	/* 매장 이름 */
@@ -23,7 +23,7 @@ public class Store {
 	}
 
 	/* 고객array */
-	public void setCustomer(Customer customer) {
+	public void addCustomer(Customer customer) {
 		this.customers.add(customer);
 	}
 
@@ -36,7 +36,7 @@ public class Store {
 	}
 
 	/* 제품array */
-	public void setProduct(Product product) {
+	public void addProduct(Product product) {
 		this.products.add(product);
 	}
 
@@ -50,11 +50,9 @@ public class Store {
 
 	/* 제품 결제 */
 	void pay(Customer customer, Product product) {
-		if (products.contains(product)) {
-            customer.addProduct(product);
-        } else {
-            System.out.println("Product not available in the store.");
-        }
+		customer.getPurchase().add(product);
+		customer.buyPrice += product.price;
+		product.totalPrice += product.price;
 	}
 
 }

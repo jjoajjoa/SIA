@@ -1,8 +1,10 @@
 
 public class Product {
+	
+	static int totalPrice;
 	String name;
 	int price;
-
+	
 	Product(String name, int price) {
 		this.name = name;
 		this.price = price;

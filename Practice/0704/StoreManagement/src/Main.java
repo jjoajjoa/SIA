@@ -2,48 +2,52 @@
 public class Main {
 
 	public static void main(String[] args) {
-		
-		Store store = new Store("JJoajjoa");
+
+		Store store1 = new Store("No.1");
+//		Store store2 = new Store("No.2");
 		Customer customer1 = new Customer("김고객", 1, "111");
 		Customer customer2 = new Customer("이고객", 2, "222");
 		Customer customer3 = new Customer("박고객", 3, "333");
 		Customer customer4 = new Customer("최고객", 4, "444");
-		store.setCustomer(customer1);
-		store.setCustomer(customer2);
-		store.setCustomer(customer3);
-		store.setCustomer(customer4);
+		store1.addCustomer(customer1);
+		store1.addCustomer(customer2);
+		store1.addCustomer(customer3);
+		store1.addCustomer(customer4);
 		Product product1 = new Product("gaga", 1000);
 		Product product2 = new Product("nana", 2000);
 		Product product3 = new Product("dada", 3000);
 		Product product4 = new Product("lala", 4000);
-		store.setProduct(product1);
-		store.setProduct(product2);
-		store.setProduct(product3);
-		store.setProduct(product4);
+		store1.addProduct(product1);
+		store1.addProduct(product2);
+		store1.addProduct(product3);
+		store1.addProduct(product4);
 
-		System.out.println("> 매장 안 고객 수: " + store.getCustomers().size());
-		System.out.println("> 매장 안 제품 수: " + store.getProducts().size());
+		System.out.println("> 우리 매장 이 름: " + store1.getName());
+		System.out.println("> 매장 안 고객 수: " + store1.getCustomers().size());
+		System.out.println("> 매장 안 제품 수: " + store1.getProducts().size());
 
-		store.pay(customer2, product1);
+		/* 한사람 한개씩 결제 */
+		store1.pay(customer1, product2);
+		store1.pay(customer1, product3);
+		store1.pay(customer2, product1);
 
-		System.out.println("\n  [우리 매장 " + store.getName() + " 고객 리스트]");
-		for (Customer customer : store.getCustomers()) {
+		System.out.println("\n  [우리 매장 " + store1.getName() + " 고객 리스트]");
+		for (Customer customer : store1.getCustomers()) {
 			System.out.println(customer);
 		}
+
+		for (Customer c : store1.getCustomers()) {
+			if (c.purchase.size() > 0) {
+				System.out.println(".......[장바구니]");
+				System.out.println("고객 이름 : " + c.name + "이 구매한 제품");
+				for (Product p : c.getPurchase()) {
+					System.out.println("제품 이름 : " + p.name + " || 가격 : " + p.price + "원");
+				}
+				System.out.println(">>> 총 " + c.buyPrice + "원");
+			}
+		}
 		
-		System.out.println("\n  [우리 매장 " + store.getName() + " 고객 리스트]");
-//		for ()
-		
-		System.out.println("\n  [고객 별 장바구니]");
-		for (int i = 0; i < store.products.size(); i++) {
-            Product customer = store.products.get(i);
-            System.out.println(customer.getName() + " || " + customer.name);
-        }
-		
-		System.out.println("\n  [우리 매장 " + store.getName() + " 총 매출액]");
-		
-//		System.out.println(customer2.calculateTotalPrice());
-//		System.out.println(customer3.calculateTotalPrice());
+		System.out.println(".............." + Product.totalPrice);
 
 	}
 

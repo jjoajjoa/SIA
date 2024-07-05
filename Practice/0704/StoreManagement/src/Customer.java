@@ -1,19 +1,19 @@
 import java.util.ArrayList;
-
+ 
 public class Customer {
 	String name;
 	int age;
 	String phone;
 
-	ArrayList<Product> products;
+	ArrayList<Product> purchase = new ArrayList<>(); // 한 고객이 산 제품리스트
+	int buyPrice;
 
 	Customer(String name, int age, String phone) {
 		this.name = name;
 		this.age = age;
 		this.phone = phone;
-		this.products = new ArrayList<Product>();
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -37,32 +37,19 @@ public class Customer {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	
-	public void addProduct(Product product) {
-		products.add(product);
-	}
-	
-	public void setProducts(ArrayList<Product> products) {
-		this.products = products;
-	}
-	
-	public ArrayList<Product> getProducts() {
-		return products;
-	}
-	
-    public int calculateTotalPrice() {
-        int total = 0;
-        for (Product product : products) {
-            total += product.getPrice();
-        }
-        return total;
-    }
 
+	/* 한사람 한개 구매중*/
+	public ArrayList<Product> getPurchase() {
+		return purchase;
+	}
+	
+	public void setPurchase(ArrayList<Product> purchase) {
+		this.purchase = purchase;
+	}
+	
 	@Override
 	public String toString() {
 		return ">>> 고객성함: " + name + " || 나이: " + age + " || 전화번호: " + phone;
 	}
-	
-	
 
 }
