@@ -17,5 +17,9 @@ public class Product {
 	public String getName() {
 		return this.name;
 	}
+
+	public int getPrice() {
+		return this.price;
+	}
 	
 }

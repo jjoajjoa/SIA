@@ -39,9 +39,14 @@ public class Main {
 		store.dayToSoldProductList.put(today, customer2.purchase);
 		store.dayToSoldProductList.put(today, customer3.purchase);
 		// 날짜 별 팔린 총 금액 저장하기
-		store.dayToTotal.put(yesterday, 10000);
-		store.dayToTotal.put(today, 30000);
-//		System.out.println(".......Test......" + store.dayToTotal);
+//		store.dayToTotal.put(yesterday, 10000);
+//		store.dayToTotal.put(today, 30000);
+		System.out.println(".......Test......" + store.dayToTotal);
+		
+		//LDB
+		store.dayToTotal.forEach((dateKey, totalAmount) -> {
+			System.out.println(dateKey + " 에 판매된 물건 총액 : " + totalAmount);
+		});
 
 		for (String key : store.dayToSoldProductList.keySet()) {
 			System.out.println(">> 날짜: " + key);
