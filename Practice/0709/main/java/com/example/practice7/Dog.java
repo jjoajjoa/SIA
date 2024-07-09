@@ -1,4 +1,4 @@
-package com.example.practice7;
+package com.example.test1;
 
 import android.widget.ImageView;
 

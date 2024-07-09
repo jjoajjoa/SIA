@@ -1,10 +1,9 @@
-package com.example.practice7;
+package com.example.test1;
 
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             String ageStr = inputAge.getText().toString();
             int age = Integer.parseInt(ageStr);
             String mobile = inputMobile.getText().toString();
-            if (name.equals("")||ageStr.equals("")||mobile.equals("")) {
+            if (name.isEmpty() || ageStr.isEmpty() || mobile.isEmpty()) {
                 Toast.makeText(MainActivity.this, "Plz enter the details.", Toast.LENGTH_SHORT).show();
             } else {
                 createDog(name, age, mobile);
@@ -51,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             String ageStr = inputAge.getText().toString();
             int age = Integer.parseInt(ageStr);
             String mobile = inputMobile.getText().toString();
-            if (name.equals("")||ageStr.equals("")||mobile.equals("")) {
+            if (name.isEmpty() || ageStr.isEmpty() || mobile.isEmpty()) {
                 Toast.makeText(MainActivity.this, "Plz enter the details.", Toast.LENGTH_SHORT).show();
             } else {
                 createCat(name, age, mobile);
@@ -63,27 +62,41 @@ public class MainActivity extends AppCompatActivity {
         ////////////
         Button btnStdUp = findViewById(R.id.btnStdUp);
         btnStdUp.setOnClickListener(view -> {
-            standUp();
+            if (animal != null) {
+                animal.standUp();
+            } else {
+                Toast.makeText(MainActivity.this, "Create an animal first.", Toast.LENGTH_SHORT).show();
+            }
         });
 
         Button btnSitDown = findViewById(R.id.btnSitDown);
         btnSitDown.setOnClickListener(view -> {
-            sitDown();
+            if (animal != null) {
+                animal.sitDown();
+            } else {
+                Toast.makeText(MainActivity.this, "Create an animal first.", Toast.LENGTH_SHORT).show();
+            }
         });
 
         Button btnRun = findViewById(R.id.btnRun);
         btnRun.setOnClickListener(view -> {
-            run();
+            if (animal != null) {
+                animal.run();
+            } else {
+                Toast.makeText(MainActivity.this, "Create an animal first.", Toast.LENGTH_SHORT).show();
+            }
         });
 
     } //onCreate
 
     void createDog(String name, int age, String mobile) {
         dog = new Dog(name, age, mobile, image);
+        animal = dog;
     }
 
     void createCat(String name, int age, String mobile) {
         cat = new Cat(name, age, mobile, image);
+        animal = cat;
     }
 
     void standUp() { dog.standUp(); }
