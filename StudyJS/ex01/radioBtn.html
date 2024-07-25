@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>RADIO BUTTON</title>
+</head>
+
+<body>
+    <h1>라디오버튼 + JS</h1>
+
+    <div>
+        <input type="radio" name="animal" value="cat" checked><span>고양이</span>
+        <input type="radio" name="animal" value="dog"><span>강아지</span>
+    </div>
+
+    <div>
+        <button onclick="show()"> OK </button>
+    </div>
+
+    <div id="output"></div>
+
+    <script>
+        function show() {
+            const radios = document.getElementsByName('animal');
+            const selected = Array.from(radios).find(elem => elem.checked);
+            alert(`선택한 동물: ${selected.value}`);
+            if (selected.value == 'cat') {
+                console.log('myaaa');
+            } else if (selected.value == 'dog') {
+                console.log('bowwow');
+            }
+        }
+    </script>
+</body>
+
+</html>

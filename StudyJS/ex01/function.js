@@ -60,6 +60,28 @@ add2(10, 11, (result) => {
 })
 
 
+/** 함수 다시 정리 */
+function addFunc1(a, b) { return a + b; }
+const res1 = addFunc1(10, 20);
+console.log(`addFunc1 결과: ${res1}`);
+
+// 화살표함수로 바꾸기
+const addFunc2 = (a, b) => { return a + b; }
+
+// 콜백함수 사용
+function addFunc3(a, b, callback) { callback(a + b); }
+addFunc3(11, 12, (res3) => { console.log(`addFunc3 결과: ${res3}`); })
+
+// 원래는 이렇게 했었다
+function addFunc4(a, b) {  return a + b; }
+addFunc3(11, 12, function (res4) { console.log(`addFunc4 결과: ${res4}`); })
+
+// 익명함수가 아니라면 이렇게
+function addFunc5(a, b, callback) { callback(a + b); }
+// const callback = (res5) => { console.log(`addFunc5 결과: ${res5}`); }
+function callback(res5) { console.log(`addFunc5 결과: ${res5}`); }
+
+
 /* for문이랑 콜백함수써서 1~10 더하기 */
 // for문 사용
 let sum = 0;
@@ -87,7 +109,7 @@ let calc2 = (start, end, callback) => {
     }
     callback(sumsum);
 }
-calc2(0, 10 ,(result123) => {
+calc2(0, 10, (result123) => {
     console.log(`1부터 10까지의 누적합: ${result123}`);
 });
 // 과제수행
