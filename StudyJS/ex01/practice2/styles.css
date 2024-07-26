@@ -6,8 +6,12 @@ h1 { text-align: center; }
 
 
 /* Row Column */
-.row { display: flex; flex-wrap: wrap; margin: -10px; }
-.col { flex: 1; padding: 10px; border: 1px solid #ccc; margin: 10px; }
-.col-1 { flex: 1; padding: 10px; border: 1px solid #ccc; margin: 10px; }
-.col-2 { flex: 2; padding: 10px; border: 1px solid #ccc; margin: 10px; }
-.col-3 { flex: 3; padding: 10px; border: 1px solid #ccc; margin: 10px; }
+.row { display: flex; flex-wrap: wrap; margin: 10px; }
+.col { flex: 1; border: 2px solid tomato; margin-top: 2em; margin-bottom: 2em; margin-right: 2em;}
+.col-1 { flex: 1; border: 2px solid tomato; margin-top: 2em; margin-bottom: 2em; }
+.col-2 { flex: 2; border: 2px solid tomato; margin-top: 2em; margin-bottom: 2em; }
+.col-3 { flex: 3; border: 2px solid tomato; margin-top: 2em; margin-bottom: 2em; }
+
+
+.lotto-container { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; }
+.lotto-number { width: 40px; height: 40px; border-radius: 50%; background-color: tomato; display: flex; justify-content: center; align-items: center; margin: 5px; font-weight: bold; }
