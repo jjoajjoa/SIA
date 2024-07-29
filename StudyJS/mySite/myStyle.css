@@ -1,7 +1,61 @@
-* { margin: 0; padding: 0; background-color: black; }
+/* 폰트 */
+@font-face {
+    font-family: "NetflixSansRegular";
+    src: url("font/NetflixSansRegular.ttf") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
 
-.container-fluid { width: 100%; height: 100%; }
+@font-face {
+    font-family: "NetflixSansBlack";
+    src: url("font/NetflixSansBlack.ttf") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+.fs-regular {
+    font-family: 'NetflixSansRegular', sans-serif;
+    font-weight: normal;
+}
+
+.fs-bold {
+    font-family: 'NetflixSansBlack', sans-serif;
+    font-weight: bold;
+}
 
 
-.footer-hr { margin: 0; border: 3px solid #000; }
-.footer-section { color: #a5a5a5; }
+/* 내부요소 */
+/* 전체 */
+* {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* first-section */
+.first-section {
+    position: relative;
+}
+
+.back-img {
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+/* 푸터 */
+.footer-hr {
+    margin: 0;
+    border: 3px solid #000;
+}
+
+.footer-section {
+    color: #a5a5a5;
+}
