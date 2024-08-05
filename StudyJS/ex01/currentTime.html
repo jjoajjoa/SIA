@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> Time </title>
+    <script src="../moment.min.js"></script>
+</head>
+
+<body>
+    <h1>현재 시간</h1>
+    <div id="output"></div>
+    <script>
+        const output = document.querySelector('#output');
+        setInterval(() => {
+            const curTime = moment().format('YYYY/MM/DD HH:mm:ss');
+            output.innerHTML = `<p> ${curTime} </p>`;
+        }, 1000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.container { margin-left: 10em; margin-right: 10em; }
+h1 { text-align: center; }
+.info { border: 2px solid tomato; margin-top: 2em; margin-bottom: 2em;}
+.info-
+
+/* Row Column */
+.row { display: flex; flex-wrap: wrap; margin: -10px; }
+.col { flex: 1; padding: 10px; border: 1px solid #ccc; margin: 10px; }
+.col-1 { flex: 1; padding: 10px; border: 1px solid #ccc; margin: 10px; }
+.col-2 { flex: 2; padding: 10px; border: 1px solid #ccc; margin: 10px; }
+.col-3 { flex: 3; padding: 10px; border: 1px solid #ccc; margin: 10px; }
