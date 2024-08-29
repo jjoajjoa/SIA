@@ -20,6 +20,11 @@ const router = createRouter({
             component: () => import('../views/MeetingView.vue')
         },
         {
+            path: '/meetingroom',
+            name: 'meetingroom',
+            component: () => import('../views/MeetingRoomView.vue')
+        },
+        {
             path: '/timer',
             name: 'timer',
             component: () => import('../views/MeetingTimer.vue')

@@ -1,4 +1,5 @@
 <script setup>
+import MainHeader from '@/components/MainHeader.vue';
 import MeetingStart from '../components/MeetingStart.vue';
 import MainSidebarBody from '@/components/MainSidebarBody.vue';
 
@@ -11,6 +12,7 @@ const { roomTitle } = defineProps({
 </script>
 
 <template>
+    <MainHeader />
     <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper" style="height: 100vh;">
         <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
             <div class="d-flex flex-column flex-column-fluid">
